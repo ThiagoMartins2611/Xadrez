@@ -1,18 +1,7 @@
-let xadrez = document.getElementById('xadrez')
+import { Peca } from "./classes/peca"; 
 
-for(let i=0; i<64; i++){
-    let squares = document.createElement("div");
-    let black = "black squares"
-    let white = "white squares"
+let squares = document.getElementsByClassName('square');
 
-    let quadradoAnterior = squares.className;
+const peca = new Peca;
 
-    if(quadradoAnterior != white){
-        squares.className = white;
-    }else{
-        squares.className = black;
-    }
-    
-    xadrez.appendChild(squares);
-
-}
+peca(squares[0]).spawn();
