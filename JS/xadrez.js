@@ -1,7 +1,7 @@
-import { Peca } from "./classes/peca"; 
+import { Peca } from "./classes/peca.js"; 
 
 let squares = document.getElementsByClassName('square');
 
-const peca = new Peca;
+const peca = new Peca(squares[0]);
 
-peca(squares[0]).spawn();
+peca.spawn()
