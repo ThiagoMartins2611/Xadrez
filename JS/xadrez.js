@@ -1,7 +1,8 @@
-import { Peca } from "./classes/peca.js"; 
+import { Torre } from "./classes/torre.js";
 
 let squares = document.getElementsByClassName('square');
 
-const peca = new Peca(squares[0]);
 
-peca.spawn()
+const torre = new Torre();
+torre.spawn(squares[0], "./Sprites/leticiaLinda.png")
+

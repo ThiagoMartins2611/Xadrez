@@ -1,23 +1,29 @@
 export class Peca{
     
-    constructor(inicialSquare){
-        this.squarePosition = inicialSquare;
+    constructor(){
+        this.squarePosition;
+        this.peca;
     }
 
-    spawn(sprite){
-        let peca = document.createElement('div');
-        peca.id = 'peca'
-        
+    spawn(inicialSquare, sprite){
 
-        this.squarePosition.appendChild(peca)
+        this.squarePosition = inicialSquare;
+
+        let peca = document.createElement('div');
+        peca.className = 'peca'
+        this.peca = peca;
+
+        let img = document.createElement('img');
+        img.alt = ""
+        img.src = sprite;
+
+        
+        peca.appendChild(img);
+        inicialSquare.appendChild(peca)
     }
 
     destruction(){
-
-    }
-
-    move(){
-        
+        this.peca.remove()
     }
 
 }
