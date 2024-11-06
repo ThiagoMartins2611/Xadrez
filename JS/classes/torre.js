@@ -8,6 +8,11 @@ export class Torre extends Peca{
     }
 
     move(){
+        this.peca.onmousedown = () =>{
+            
+            
 
+
+        }
     }
 }
