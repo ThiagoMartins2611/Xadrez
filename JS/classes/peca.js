@@ -26,4 +26,14 @@ export class Peca{
         this.peca.remove()
     }
 
+    createMarcs(marcsPosition){
+        let marc = document.createElement('div');
+        marc.className = "marc"
+
+        marcsPosition.appendChild(marc);
+    }
+
+    eliminateMarcs(){
+
+    }
 }

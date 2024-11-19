@@ -50,9 +50,20 @@ body{
 
     background-color: brown;
 }
+.peca:hover{
+    cursor: pointer;
+}
 
 .peca img{
     width: 50px;
     height: auto;
     border-radius: 10px;
+}
+
+.marc{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+
+    background-color: gray;
 }
