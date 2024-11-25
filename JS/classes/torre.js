@@ -8,11 +8,19 @@ export class Torre extends Peca{
     }
 
     move(){
-        this.peca.onclick = () =>{
-        let squares = document.getElementsByClassName('square');
-    
-        this.createMarcs(squares[1])
 
+        this.peca.onclick = () =>{
+        
+        
+            for (let i = 0; i < 14; i++) {
+                
+                
+            }
+            
+           
+            this.activeMarc = !this.activeMarc;
         }
     }
+
+  
 }

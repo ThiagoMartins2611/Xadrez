@@ -20,16 +20,16 @@ body{
 
 #xadrez{
     background-color: grey;
-    width: 800px;
-    height: 800px;
-    display: flex;
-    flex-wrap: wrap;
+    width: 40vw;
+    height: 40vw;
+    display: grid;
+    grid-template-columns: repeat(8, 5vw);
     
 }
 
 .square{
-    width: 100px;
-    height: 100px;
+    width: 5vw;
+    height: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,8 +44,8 @@ body{
 }
 
 .peca{
-    width: 50px;
-    height: 50px;
+    width: 50%;
+    height: 50%;
     border-radius: 10px;
 
     background-color: brown;
@@ -55,14 +55,14 @@ body{
 }
 
 .peca img{
-    width: 50px;
+    width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
 .marc{
-    width: 30px;
-    height: 30px;
+    width: 30%;
+    height: 30%;
     border-radius: 100%;
 
     background-color: gray;
