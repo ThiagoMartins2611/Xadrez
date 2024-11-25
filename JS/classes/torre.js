@@ -2,20 +2,29 @@ import { Peca } from "./peca.js";
 
 export class Torre extends Peca{
     
-    constructor(){
+    constructor(dominio){
         super()
-
+        
     }
 
     move(){
 
         this.peca.onclick = () =>{
+
+            console.log(this.world)
+            let x = this.encontrarIndice(this.world, this.squarePosition);
+            
+            console.log(x)
+            
+
         
-        
-            for (let i = 0; i < 14; i++) {
-                
-                
-            }
+
+           
+
+
+
+
+          
             
            
             this.activeMarc = !this.activeMarc;

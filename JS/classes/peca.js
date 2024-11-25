@@ -1,10 +1,19 @@
-export class Peca{
+import { EncontrarIndice2D } from "./EncontrarIndice2D.js";
+
+export class Peca extends EncontrarIndice2D{
     
-    constructor(){
+    constructor(dominio){
+
+        super()
+
+        this.world = dominio;
         this.squarePosition;
         this.peca;
         this.activeMarc = false;
+    
+        
     }
+
 
     spawn(inicialSquare, sprite){
 
@@ -41,23 +50,21 @@ export class Peca{
 
         marcs.forEach(marc => marc.remove());
 
-        console.log("arroz eliminado")
     }
 
 
-    marcs(pos){
-    let squares = document.getElementsByClassName('square');
+    marcs(dominio, posY, posX){
+    
         if(this.activeMarc) {
 
-            this.eliminateMarcs(squares[pos]); // Chama a função para eliminar
+            this.eliminateMarcs(dominio[posY][posX]); // Chama a função para eliminar
 
     } else {
 
-            this.createMarcs(squares[pos]); // Chama a função para criar
+            this.createMarcs(dominio[posY][posX]); // Chama a função para criar
 
     }
 
-    // Alterna o estado de 'active'
     
 
     }
