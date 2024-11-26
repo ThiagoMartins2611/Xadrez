@@ -5,12 +5,11 @@ export class Peca extends EncontrarIndice2D{
     constructor(dominio){
 
         super()
-
         this.world = dominio;
         this.squarePosition;
         this.peca;
         this.activeMarc = false;
-    
+        
         
     }
 
@@ -38,6 +37,7 @@ export class Peca extends EncontrarIndice2D{
 
 
     createMarcs(marcsPosition){
+        
         let marc = document.createElement('div');
         marc.className = "marc"
 
@@ -53,15 +53,15 @@ export class Peca extends EncontrarIndice2D{
     }
 
 
-    marcs(dominio, posY, posX){
+    marcs(posY, posX){
     
         if(this.activeMarc) {
 
-            this.eliminateMarcs(dominio[posY][posX]); // Chama a função para eliminar
+            this.eliminateMarcs(this.world[posY][posX]); // Chama a função para eliminar
 
     } else {
 
-            this.createMarcs(dominio[posY][posX]); // Chama a função para criar
+            this.createMarcs(this.world[posY][posX]); // Chama a função para criar
 
     }
 
