@@ -39,9 +39,20 @@ export class Peca extends EncontrarIndice2D{
     createMarcs(marcsPosition){
         
         let marc = document.createElement('div');
+        let point = document.createElement('div');
         marc.className = "marc"
-
+        
+        marc.appendChild(point);
         marcsPosition.appendChild(marc);
+
+        marc.onclick = () => {
+            this.squarePosition = marcsPosition;
+
+            this.squarePosition.appendChild(this.peca);
+
+            this.eliminateMarcs()
+            this.activeMarc = !this.activeMarc;
+        }
     }
 
 
