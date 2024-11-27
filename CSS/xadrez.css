@@ -44,12 +44,15 @@ body{
 }
 
 .peca{
-    width: 50%;
-    height: 50%;
-    border-radius: 10px;
-
+    width: 100%;
+    height: 100%;
     background-color: brown;
+
+    border-radius: 100px 100px 0 0;
 }
+
+
+
 .peca:hover{
     cursor: pointer;
 }
