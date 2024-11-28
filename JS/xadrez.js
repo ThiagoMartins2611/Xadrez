@@ -1,4 +1,6 @@
 import { Torre } from "./classes/torre.js";
+import { Cavalo } from "./classes/cavalo.js";
+
 
 let squares = document.getElementsByClassName('square');
 
@@ -19,9 +21,11 @@ let SquareTabelado = transformarEm2D(arraySquare, 8);
 
 
 
+/*const torre = new Torre(SquareTabelado);
+torre.spawn(SquareTabelado[0][0], "")
+torre.move()*/
 
-const torre = new Torre(SquareTabelado);
-torre.spawn(SquareTabelado[3][3], "")
+const cavalo = new Cavalo(SquareTabelado);
+cavalo.spawn(SquareTabelado[4][4], "")
+cavalo.move();
 
-
-torre.move()

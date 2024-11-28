@@ -10,7 +10,6 @@ export class Peca extends EncontrarIndice2D{
         this.peca;
         this.activeMarc = false;
         
-        
     }
 
 
