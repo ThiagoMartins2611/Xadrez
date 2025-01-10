@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+}
+
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#xadrez{
+    background-color: grey;
+    width: 800px;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.squares{
+    width: 100px;
+    height: 100px;
+}
+
+.black{
+    background-color: black;
+}
+
+.white{
+    background-color: white;
+}
