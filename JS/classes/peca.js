@@ -1,5 +1,6 @@
 import { EncontrarIndice2D } from "./EncontrarIndice2D.js";
 
+
 export class Peca extends EncontrarIndice2D{
     
     constructor(dominio){
@@ -48,6 +49,7 @@ export class Peca extends EncontrarIndice2D{
             this.squarePosition = marcsPosition;
 
             this.squarePosition.appendChild(this.peca);
+
 
             this.eliminateMarcs()
             this.activeMarc = !this.activeMarc;

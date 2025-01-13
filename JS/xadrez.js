@@ -1,6 +1,8 @@
 import { Torre } from "./classes/torre.js";
 import { Cavalo } from "./classes/cavalo.js";
 import { Bispo } from "./classes/bispo.js";
+import { Peao } from "./classes/peao.js";
+
 
 
 
@@ -31,6 +33,10 @@ torre.move()*/
 cavalo.spawn(SquareTabelado[4][4], "")
 cavalo.move();*/
 
-const bispo = new Bispo(SquareTabelado);
+/*const bispo = new Bispo(SquareTabelado);
 bispo.spawn(SquareTabelado[4][4], "");
-bispo.move();
+bispo.move();*/
+
+const peao = new Peao(SquareTabelado);
+peao.spawn(SquareTabelado[6][4]);
+peao.move();

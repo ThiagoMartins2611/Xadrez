@@ -1,10 +1,12 @@
 import { Peca } from "./peca.js";
 
+
+
 export class Peao extends Peca{
     constructor(dominio){
         super()
         this.world = dominio;
-        
+        this.rep = null
     }
 
 
@@ -13,7 +15,7 @@ export class Peao extends Peca{
         let positionIni = this.encontrarIndice(this.world, this.squarePosition);
         let upORdown = true;
         //up = true;
-        //down = false
+        //down = false;
 
         if(positionIni[0] > 3){
             upORdown = false;
@@ -24,30 +26,37 @@ export class Peao extends Peca{
         
 
         let firstPlay = true;
-        let ChangePiece = false;
 
+        
+         this.rep = setInterval(this.confirmPositionForChangeThePiece.bind(this), 1)
+    
 
+        
 
         
         this.peca.onclick = () =>{
 
             
 
-
+            
             let position = this.encontrarIndice(this.world, this.squarePosition);
     
 
             
 
-
+            
 
             if(upORdown){
-                if(firstPlay){
+
+                if(positionIni[0] != position[0]){
+                    firstPlay = false;
+                } 
+
+                if(firstPlay){ 
 
                     this.marcs(position[0]+1, position[1])
-                    this.marcs(position[0]+2, position[1])
-
-                    firstPlay = false;
+                    this.marcs(position[0]+2, position[1])  
+                    
 
                 }else{
 
@@ -57,12 +66,16 @@ export class Peao extends Peca{
 
             }else{
 
+                if(positionIni[0] != position[0]){
+                    firstPlay = false;
+                } 
+
                 if(firstPlay){
 
                     this.marcs(position[0]-1, position[1])
                     this.marcs(position[0]-2, position[1])
 
-                    firstPlay = false;
+                   
 
                 }else{
 
@@ -73,11 +86,7 @@ export class Peao extends Peca{
             }
             
 
-            if(position[0] == 0 || position[0] == 7){
-
-                ChangePiece = true;
-                console.log(ChangePiece)
-            }
+            
 
             
 
@@ -89,5 +98,60 @@ export class Peao extends Peca{
             
         }
 
+
+
+        
+
     }
+
+    confirmPositionForChangeThePiece(){
+
+        let actualPosition = this.encontrarIndice(this.world, this.squarePosition);
+
+
+        if(actualPosition[0] == 0 || actualPosition[0] == 7){
+        
+            clearInterval(this.rep);
+
+            let body = document.getElementById('body');
+            
+
+            let bloco = document.createElement('div');
+            bloco.id = "blocoPeao";
+
+
+            let imgCavalo = document.createElement('div');
+            imgCavalo.id = "cavaloChoice";
+            imgCavalo.className = "imgChoice";
+
+
+            let imgRainha = document.createElement('div');
+            imgRainha.id = "rainhaChoice";
+            imgRainha.className = "imgChoice";
+
+
+            let imgBispo = document.createElement('div');
+            imgBispo.id = "bispoChoice";
+            imgBispo.className = "imgChoice";
+            
+            let imgTorre = document.createElement('div');
+            imgTorre.id = "torreChoice";
+            imgTorre.className = "imgChoice";
+
+
+            bloco.appendChild(imgBispo);
+            bloco.appendChild(imgCavalo);
+            bloco.appendChild(imgTorre);
+            bloco.appendChild(imgRainha);
+
+            body.appendChild(bloco)
+
+
+            
+        }
+
+    }
+
+
+
 }
