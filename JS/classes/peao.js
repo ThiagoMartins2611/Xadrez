@@ -115,6 +115,8 @@ export class Peao extends Peca{
 
             let body = document.getElementById('body');
             
+            let blur = document.createElement('div');
+            blur.id = "blurChoice";
 
             let bloco = document.createElement('div');
             bloco.id = "blocoPeao";
@@ -144,7 +146,9 @@ export class Peao extends Peca{
             bloco.appendChild(imgTorre);
             bloco.appendChild(imgRainha);
 
-            body.appendChild(bloco)
+            blur.appendChild(bloco)
+
+            body.appendChild(blur)
 
 
             

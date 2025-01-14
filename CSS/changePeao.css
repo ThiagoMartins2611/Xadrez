@@ -1,8 +1,41 @@
+#blurChoice{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    backdrop-filter: blur(5px);
+
+    z-index: 2;
+}
+
+
 #blocoPeao{
-    width: 500px;
-    height: 200px;
+    
+    width: 20vw;
+    height: 10vw;
 
     background-color: blue;
 
-    position: absolute;
+    
+
+    
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
+
+.imgChoice{
+    width: 3vw;
+    height: 3vw;
+    background-color: red;
+
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+
