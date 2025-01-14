@@ -49,6 +49,7 @@ export class Torre extends Peca{
             }
 
 
+            
 
 
 

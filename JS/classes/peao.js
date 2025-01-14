@@ -125,20 +125,25 @@ export class Peao extends Peca{
             let imgCavalo = document.createElement('div');
             imgCavalo.id = "cavaloChoice";
             imgCavalo.className = "imgChoice";
+            imgCavalo.innerText = "Cavalo"; //tirar
+
 
 
             let imgRainha = document.createElement('div');
             imgRainha.id = "rainhaChoice";
             imgRainha.className = "imgChoice";
+            imgRainha.innerText = "Rainha"; //tirar
 
 
             let imgBispo = document.createElement('div');
             imgBispo.id = "bispoChoice";
             imgBispo.className = "imgChoice";
+            imgBispo.innerText = "Bispo"; //tirar
             
             let imgTorre = document.createElement('div');
             imgTorre.id = "torreChoice";
-            imgTorre.className = "imgChoice";
+            imgTorre.className = "imgChoice"; 
+            imgTorre.innerText = "Torre"; //tirar
 
 
             bloco.appendChild(imgBispo);

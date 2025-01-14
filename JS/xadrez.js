@@ -2,6 +2,7 @@ import { Torre } from "./classes/torre.js";
 import { Cavalo } from "./classes/cavalo.js";
 import { Bispo } from "./classes/bispo.js";
 import { Peao } from "./classes/peao.js";
+import { Rainha } from "./classes/rainha.js";
 
 
 
@@ -24,7 +25,6 @@ let SquareTabelado = transformarEm2D(arraySquare, 8);
 
 
 
-
 /*const torre = new Torre(SquareTabelado);
 torre.spawn(SquareTabelado[0][0], "")
 torre.move()*/
@@ -37,6 +37,10 @@ cavalo.move();*/
 bispo.spawn(SquareTabelado[4][4], "");
 bispo.move();*/
 
-const peao = new Peao(SquareTabelado);
+/*const peao = new Peao(SquareTabelado);
 peao.spawn(SquareTabelado[6][4]);
-peao.move();
+peao.move();*/
+
+/*const rainha = new Rainha(SquareTabelado);
+rainha.spawn(SquareTabelado[4][4]);
+rainha.move()*/
