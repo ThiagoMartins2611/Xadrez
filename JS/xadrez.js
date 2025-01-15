@@ -3,6 +3,7 @@ import { Cavalo } from "./classes/cavalo.js";
 import { Bispo } from "./classes/bispo.js";
 import { Peao } from "./classes/peao.js";
 import { Rainha } from "./classes/rainha.js";
+import { Rei } from "./classes/rei.js";
 
 
 
@@ -44,3 +45,7 @@ peao.move();*/
 /*const rainha = new Rainha(SquareTabelado);
 rainha.spawn(SquareTabelado[4][4]);
 rainha.move()*/
+
+/*const rei = new Rei(SquareTabelado);
+rei.spawn(SquareTabelado[4][4]);
+rei.move();*/
