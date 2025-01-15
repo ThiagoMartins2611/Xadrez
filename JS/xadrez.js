@@ -1,11 +1,6 @@
-import { Torre } from "./classes/torre.js";
-import { Cavalo } from "./classes/cavalo.js";
-import { Bispo } from "./classes/bispo.js";
-import { Peao } from "./classes/peao.js";
-import { Rainha } from "./classes/rainha.js";
-import { Rei } from "./classes/rei.js";
-
-
+import { IniciarTorre } from "./inicializadores/IniciarTorre.js";
+import { IniciarRainha } from "./inicializadores/iniciarRainha.js";
+import { IniciarBispo } from "./inicializadores/iniciarBispo.js";
 
 
 let squares = document.getElementsByClassName('square');
@@ -24,28 +19,11 @@ function transformarEm2D(array, tamanho) {
 
 let SquareTabelado = transformarEm2D(arraySquare, 8);
 
+const torre = new IniciarTorre()
+torre.init(7, 7, SquareTabelado);
 
+const rainha = new IniciarRainha()
+rainha.init(5, 4, SquareTabelado);
 
-/*const torre = new Torre(SquareTabelado);
-torre.spawn(SquareTabelado[0][0], "")
-torre.move()*/
-
-/*const cavalo = new Cavalo(SquareTabelado);
-cavalo.spawn(SquareTabelado[4][4], "")
-cavalo.move();*/
-
-/*const bispo = new Bispo(SquareTabelado);
-bispo.spawn(SquareTabelado[4][4], "");
-bispo.move();*/
-
-/*const peao = new Peao(SquareTabelado);
-peao.spawn(SquareTabelado[6][4]);
-peao.move();*/
-
-/*const rainha = new Rainha(SquareTabelado);
-rainha.spawn(SquareTabelado[4][4]);
-rainha.move()*/
-
-/*const rei = new Rei(SquareTabelado);
-rei.spawn(SquareTabelado[4][4]);
-rei.move();*/
+const bispo = new IniciarBispo()
+bispo.init(6, 2, SquareTabelado)
