@@ -5,9 +5,9 @@ export class IniciarCavalo{
 
     }
 
-    init(x, y, SquareTabelado){
+    init(x, y, SquareTabelado, team){
         const cavalo = new Cavalo(SquareTabelado);
-        cavalo.spawn(SquareTabelado[y][x], "");
+        cavalo.spawn(SquareTabelado[y][x], "", team);
         cavalo.move();
     }
 }

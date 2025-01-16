@@ -5,9 +5,9 @@ export class IniciarBispo{
 
     }
 
-    init(x, y, SquareTabelado){
+    init(x, y, SquareTabelado, team){
         const bispo = new Bispo(SquareTabelado);
-        bispo.spawn(SquareTabelado[y][x], "");
+        bispo.spawn(SquareTabelado[y][x], "", team);
         bispo.move();
     }
 }

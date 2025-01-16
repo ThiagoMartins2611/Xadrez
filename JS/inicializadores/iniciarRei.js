@@ -5,9 +5,9 @@ export class IniciarRei{
 
     }
 
-    init(x, y, SquareTabelado){
+    init(x, y, SquareTabelado, team){
         const rei = new Rei(SquareTabelado);
-        rei.spawn(SquareTabelado[y][x], "");
+        rei.spawn(SquareTabelado[y][x], "", team);
         rei.move();
     }
 }

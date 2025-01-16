@@ -9,80 +9,38 @@ export class Cavalo extends Peca{
     move(){
         this.peca.onclick = () =>{
 
+            if(window.marcsActivate == false || this.activeMarc == true){
             //position[y, x]
             let position = this.encontrarIndice(this.world, this.squarePosition);
             
-            let x = 0;
-            let y = 0;
-                
-            //pontos da direita
-        if(position[0]<=7 && position[0]>=0 && position[1]<=7 && position[1]>=0){
+            const cavaloMoves = [
+                [1, -2], [1, 2], [2, -1], [2, 1],
+                [-1, -2], [-1, 2], [-2, -1], [-2, 1]
+            ];
             
+            if (position[0] >= 0 && position[0] <= 7 && position[1] >= 0 && position[1] <= 7) {
+                cavaloMoves.forEach(([dy, dx]) => {
+                    let newY = position[0] + dy;
+                    let newX = position[1] + dx;
             
-            if(position[0]+1 <= 7){
-                if(position[1]-2 >= 0){
-                    this.marcs(position[0]+1, position[1]-2)
-                }
-                
-                if(position[1]+2 <= 7){
-                    this.marcs(position[0]+1, position[1]+2)
-                }
-                
+                    if (newY >= 0 && newY <= 7 && newX >= 0 && newX <= 7) {
+                        this.marcs(newY, newX);
+                    }
+                });
             }
-
-           
-
-            if(position[0]+2 <= 7 ){
-                
-                if(position[1]+1 <= 7){
-                    this.marcs(position[0]+2, position[1]+1)
-                }
-
-                if(position[1]-1 >= 0){
-                    this.marcs(position[0]+2, position[1]-1)
-                }
-            }
-
-
-
-
-            if(position[0]-1 >= 0){
-
-                if(position[1]-2 >= 0){
-                    this.marcs(position[0]-1, position[1]-2)
-                }
-                
-                if(position[1]+2 <= 7){
-                    this.marcs(position[0]-1, position[1]+2)
-                }
-            }
-            
-
-            if(position[0]-2 >= 0){
-
-                if(position[1]-1 >= 0){
-                    this.marcs(position[0]-2, position[1]-1)
-                }
-
-                 if(position[1]+1 <= 7){
-                    this.marcs(position[0]-2, position[1]+1)
-                }
-            }
-
-            
-            
-        }
-
             
           
             
            
             this.activeMarc = !this.activeMarc;
+            window.marcsActivate = !window.marcsActivate;
 
             console.log(this.activeMarc)
             console.log(position);
         
         }
     }
+
+}
 
 }

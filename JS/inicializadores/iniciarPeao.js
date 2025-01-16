@@ -5,10 +5,10 @@ export class IniciarPeao{
 
     }
 
-    init(x, y, SquareTabelado){
-        const cavalo = new Peao(SquareTabelado);
-        cavalo.spawn(SquareTabelado[y][x], "");
-        cavalo.move();
+    init(x, y, SquareTabelado, team){
+        const peao = new Peao(SquareTabelado);
+        peao.spawn(SquareTabelado[y][x], "", team);
+        peao.move();
     }
 }
 

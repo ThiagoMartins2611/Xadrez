@@ -11,91 +11,35 @@ export class Rainha extends Peca{
     move(){
         this.peca.onclick = () =>{
 
+            if(window.marcsActivate == false || this.activeMarc == true){
             //position[y, x]
             let position = this.encontrarIndice(this.world, this.squarePosition);
 
-            let x = 0;
-            let y = 0;
-            for(let i=1; i<9; i++){
-                
-               
-
-                if(position[1]+i <= 7){
-                 this.marcs(position[0], position[1]+i)
-                 
-                }else{
-                   
-                    if(x < position[1]){
-                    this.marcs(position[0], x)
+      
+            let directions = [
+                [0, 1], [0, -1], [1, 0], [-1, 0],   // Direções horizontais e verticais
+                [1, 1], [-1, -1], [1, -1], [-1, 1]   // Direções diagonais
+            ];
+            
+            directions.forEach(([dy, dx]) => {
+                for (let i = 1; i < 8; i++) {
+                    let newY = position[0] + dy * i;
+                    let newX = position[1] + dx * i;
+            
+                    if (newY >= 0 && newY <= 7 && newX >= 0 && newX <= 7) {
+                        
+                        if (this.world[newY][newX].children.length === 0 || this.activeMarc === true && this.world[newY][newX].children.length == 1){
+                            this.marcs(newY, newX);
+                        }else{
+                            break;
+                        }
+                        
                     
+                    } else {
+                        break;
                     }
-                    x++
                 }
-
-                if(position[0]+i <= 7){
-                    this.marcs(position[0]+i, position[1])
-                    
-                   }else{
-                      
-                       if(y < position[0]){
-                       this.marcs(y, position[1])
-                       
-                       }
-                       y++
-                   }
-                
-            }
-
-
-            for (let i = 1; position[0]+i <= 7; i++){
-
-                for (let j = 1; position[1]+j <= 7; j++){
-                    
-                    if(i == j){
-                        this.marcs(position[0]+i, position[1]+j)
-                    }
-
-                }
-                
-            }
-
-            for (let i = 1; position[0]-i >= 0; i++){
-
-                for (let j = 1; position[1]-j >= 0; j++){
-                    
-                    if(i == j){
-                        this.marcs(position[0]-i, position[1]-j)
-                    }
-
-                }
-                
-            }
-
-            for (let i = 1; position[0]+i <= 7; i++){
-
-                for (let j = 1; position[1]-j >= 0; j++){
-                    
-                    if(i == j){
-                        this.marcs(position[0]+i, position[1]-j)
-                    }
-
-                }
-                
-            }
-
-            for (let i = 1; position[0]-i >= 0; i++){
-
-                for (let j = 1; position[1]+j <= 7; j++){
-                    
-                    if(i == j){
-                        this.marcs(position[0]-i, position[1]+j)
-                    }
-
-                }
-                
-            }
-
-
+            });
 
 
 
@@ -103,7 +47,10 @@ export class Rainha extends Peca{
             
            
             this.activeMarc = !this.activeMarc;
+            window.marcsActivate = !window.marcsActivate;
         }
     }
+
+}
 
 }

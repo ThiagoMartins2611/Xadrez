@@ -10,54 +10,33 @@ export class Rei extends Peca{
     move(){
         this.peca.onclick = () => {
 
+            if(window.marcsActivate == false || this.activeMarc == true){
+
             let position = this.encontrarIndice(this.world, this.squarePosition);
 
            
-            if(position[0]-1 >= 0 && position[1]-1 >= 0){
-                this.marcs(position[0]-1, position[1]-1)
-            }  
+            const offsets = [
+                    [-1, -1], [-1, 0], [-1, 1],
+                    [0, -1], /* rei */ [0, 1],
+                    [1, -1], [1, 0], [1, 1]
+                ];
 
-            if(position[0]-1 >= 0 && position[1]+1 <= 7){
-                this.marcs(position[0]-1, position[1]+1)
-            }  
-            
+                offsets.forEach(([dy, dx]) => {
+                    let newY = position[0] + dy;
+                    let newX = position[1] + dx;
 
-            if(position[0]+1 <= 7 && position[1]-1 >= 0){
-                this.marcs(position[0]+1, position[1]-1)
-            }  
-
-            if(position[0]+1 <= 7 && position[1]+1 <= 7){
-                this.marcs(position[0]+1, position[1]+1)
-            }  
-
-            
-            if(position[0]+1 <= 7){
-                this.marcs(position[0]+1, position[1])
-            }
-            
-            if(position[0]-1 >= 0){
-                this.marcs(position[0]-1, position[1])
-            }
-
-            if(position[1]-1 >= 0){
-                this.marcs(position[0], position[1]-1)
-            }
-        
-
-            if(position[1]+1 <= 7){
-                this.marcs(position[0], position[1]+1)
-            }
-            
-
+                    if (newY >= 0 && newY <= 7 && newX >= 0 && newX <= 7) {
+                        this.marcs(newY, newX);
+                    }
+                });
            
             
-            
-                
-                
             this.activeMarc = !this.activeMarc;
+            window.marcsActivate = !window.marcsActivate;
             }
 
 
         }
     }
 
+}

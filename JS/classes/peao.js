@@ -36,7 +36,7 @@ export class Peao extends Peca{
         
         this.peca.onclick = () =>{
 
-            
+            if(window.marcsActivate == false || this.activeMarc == true){
 
             
             let position = this.encontrarIndice(this.world, this.squarePosition);
@@ -92,10 +92,11 @@ export class Peao extends Peca{
 
 
             this.activeMarc = !this.activeMarc;
+            window.marcsActivate = !window.marcsActivate;
 
             console.log(this.activeMarc)
             console.log(position);
-            
+        }
         }
 
 

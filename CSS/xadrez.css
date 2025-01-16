@@ -63,6 +63,19 @@ body{
     border-radius: 10px;
 }
 
+.peca.white{
+    background-color: white;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.peca.black{
+    background-color: black;
+    box-sizing: border-box;
+    border: 1px solid white;
+}
+
+
 .marc{
     width: 100%;
     height: 100%;

@@ -5,9 +5,9 @@ export class IniciarTorre{
 
     }
 
-    init(x, y, SquareTabelado){
+    init(x, y, SquareTabelado, team){
         const torre = new Torre(SquareTabelado);
-        torre.spawn(SquareTabelado[x][y], "");
+        torre.spawn(SquareTabelado[x][y], "", team);
         torre.move();
     }
 }

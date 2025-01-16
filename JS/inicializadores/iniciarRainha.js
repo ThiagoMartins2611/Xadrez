@@ -5,9 +5,9 @@ export class IniciarRainha{
 
     }
 
-    init(x, y, SquareTabelado){
+    init(x, y, SquareTabelado, team){
         const rainha = new Rainha(SquareTabelado);
-        rainha.spawn(SquareTabelado[y][x], "");
+        rainha.spawn(SquareTabelado[y][x], "", team);
         rainha.move();
     }
 }

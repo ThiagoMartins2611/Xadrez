@@ -11,21 +11,23 @@ export class Peca extends EncontrarIndice2D{
         this.peca;
         this.activeMarc = false;
         
+        
     }
 
 
-    spawn(inicialSquare, sprite){
+    spawn(inicialSquare, sprite, team){
 
         this.squarePosition = inicialSquare;
 
         let peca = document.createElement('div');
-        peca.className = 'peca'
+        peca.className = `peca ${team}`
         this.peca = peca;
 
         let img = document.createElement('img');
         img.alt = ""
         img.src = sprite;
 
+        
         
         peca.appendChild(img);
         inicialSquare.appendChild(peca)
@@ -53,6 +55,9 @@ export class Peca extends EncontrarIndice2D{
 
             this.eliminateMarcs()
             this.activeMarc = !this.activeMarc;
+            window.marcsActivate = !window.marcsActivate;
+            
+            
         }
     }
 
@@ -73,7 +78,12 @@ export class Peca extends EncontrarIndice2D{
 
     } else {
 
+
+        if(this.world[posY][posX].children.length == 0){
             this.createMarcs(this.world[posY][posX]); // Chama a função para criar
+
+        }
+            
 
     }
 
