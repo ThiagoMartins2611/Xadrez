@@ -91,4 +91,19 @@ export class Peca extends EncontrarIndice2D{
 
     }
 
+
+    eatPieceMarc(EnemyPiecePosition){
+
+        let flag = document.createElement('div');
+        flag.className = "flag";
+
+        EnemyPiecePosition.appendChild(flag);
+
+    }
+
+    eatPieceMarcDestroy(){
+
+    }
+
+
 }

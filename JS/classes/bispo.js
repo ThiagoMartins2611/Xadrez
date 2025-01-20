@@ -16,16 +16,16 @@ export class Bispo extends Peca{
 
 
              const directions = [
-                { x: 1, y: 1 }, // Diagonal superior direita
-                { x: -1, y: -1 }, // Diagonal inferior esquerda
-                { x: 1, y: -1 }, // Diagonal superior esquerda
-                { x: -1, y: 1 }, // Diagonal inferior direita
-            ];
+                [ 1, 1 ], // Diagonal superior direita
+                [ -1, -1 ], // Diagonal inferior esquerda
+                [ 1, -1 ], // Diagonal superior esquerda
+                [ -1, 1 ], // Diagonal inferior direita
+            ]
 
-            for (const direction of directions) {
+            directions.forEach(([dx, dy]) => {
                 for (let i = 1; i <= 7; i++) {
-                    const newX = position[1] + i * direction.x;
-                    const newY = position[0] + i * direction.y;
+                    let newX = position[1] + i * dx;
+                    let newY = position[0] + i *  dy;
 
                     if (newX < 0 || newX > 7 || newY < 0 || newY > 7) break;
 
@@ -35,7 +35,7 @@ export class Bispo extends Peca{
                         break;
                     }
                 }
-            }
+            });
 
             ////////////////////// desafio: tranformar e utilizar isso com forEach
 
