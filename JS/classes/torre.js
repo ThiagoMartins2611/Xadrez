@@ -32,6 +32,7 @@ export class Torre extends Peca{
                             (this.activeMarc === true && this.world[newY][newX].children.length === 1)) {
                             this.marcs(newY, newX);
                         } else {
+                            this.flag(newY, newX);
                             break;
                         }
                     } else {

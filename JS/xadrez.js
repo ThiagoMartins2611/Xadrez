@@ -29,7 +29,7 @@ torre.init(4, 2, SquareTabelado, "white");
 let bispo = new IniciarBispo()
 bispo.init(2, 6, SquareTabelado, "black");
 
-/*
+
 let cavalo = new IniciarCavalo()
 cavalo.init(1,1, SquareTabelado, "white")
 
@@ -39,5 +39,7 @@ rainha.init(1,5, SquareTabelado, "black");
 let torre2 = new IniciarTorre();
 torre2.init(4, 6, SquareTabelado, "black");
 
+let rei = new IniciarRei();
+rei.init(7,7, SquareTabelado, "white")
+
 console.log(window.marcsActivate)
-*/

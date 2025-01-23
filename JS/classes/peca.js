@@ -54,6 +54,7 @@ export class Peca extends EncontrarIndice2D{
 
 
             this.eliminateMarcs()
+            this.eatPieceMarcDestroy()
             this.activeMarc = !this.activeMarc;
             window.marcsActivate = !window.marcsActivate;
             
@@ -74,7 +75,7 @@ export class Peca extends EncontrarIndice2D{
     
         if(this.activeMarc) {
 
-            this.eliminateMarcs(this.world[posY][posX]); // Chama a função para eliminar
+            this.eliminateMarcs(); // Chama a função para eliminar
 
     } else {
 
@@ -92,17 +93,56 @@ export class Peca extends EncontrarIndice2D{
     }
 
 
-    eatPieceMarc(EnemyPiecePosition){
+    flag(posY, posX){
+
+        if(this.activeMarc) {
+
+            this.eatPieceMarcDestroy();
+
+    } else {
+
+
+        if(this.world[posY][posX].children.length == 1){
+            this.eatPieceMarcCreate(this.world[posY][posX]);
+
+        }
+
+    }
+
+ }
+
+
+    eatPieceMarcCreate(EnemyPiecePosition){
 
         let flag = document.createElement('div');
         flag.className = "flag";
 
         EnemyPiecePosition.appendChild(flag);
 
+        flag.onclick = () => {
+            this.squarePosition = EnemyPiecePosition;
+
+           
+
+            this.eliminateMarcs()
+            this.eatPieceMarcDestroy()
+
+            EnemyPiecePosition.children[0].remove()
+
+            this.squarePosition.appendChild(this.peca);
+            
+
+
+            this.activeMarc = !this.activeMarc;
+            window.marcsActivate = !window.marcsActivate;
+        }
+
     }
 
-    eatPieceMarcDestroy(){
 
+    eatPieceMarcDestroy(){
+        let flags = document.querySelectorAll('.flag');
+        flags.forEach(marc => marc.remove());
     }
 
 

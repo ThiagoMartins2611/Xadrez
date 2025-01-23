@@ -24,7 +24,13 @@ export class Cavalo extends Peca{
                     let newX = position[1] + dx;
             
                     if (newY >= 0 && newY <= 7 && newX >= 0 && newX <= 7) {
-                        this.marcs(newY, newX);
+                        if(this.world[newY][newX].children.length === 0 || this.activeMarc === true && this.world[newY][newX].children.length == 1){
+                            this.marcs(newY, newX);
+                        }else {
+                            this.flag(newY, newX);
+
+                        }
+                        
                     }
                 });
             }

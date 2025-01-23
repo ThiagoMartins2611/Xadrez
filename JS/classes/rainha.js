@@ -28,10 +28,12 @@ export class Rainha extends Peca{
             
                     if (newY >= 0 && newY <= 7 && newX >= 0 && newX <= 7) {
                         
-                        if (this.world[newY][newX].children.length === 0 || this.activeMarc === true && this.world[newY][newX].children.length == 1){
+                        if(this.world[newY][newX].children.length === 0 || this.activeMarc === true && this.world[newY][newX].children.length == 1){
                             this.marcs(newY, newX);
-                        }else{
+                        }else {
+                            this.flag(newY, newX);
                             break;
+
                         }
                         
                     

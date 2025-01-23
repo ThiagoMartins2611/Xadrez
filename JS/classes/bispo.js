@@ -32,12 +32,13 @@ export class Bispo extends Peca{
                     if (this.world[newY][newX].children.length === 0 || this.activeMarc === true && this.world[newY][newX].children.length == 1) {
                         this.marcs(newY, newX);
                     } else {
+                        this.flag(newY, newX)
                         break;
                     }
                 }
             });
 
-            ////////////////////// desafio: tranformar e utilizar isso com forEach
+          
 
 
             this.activeMarc = !this.activeMarc;

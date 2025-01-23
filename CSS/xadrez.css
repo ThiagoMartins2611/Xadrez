@@ -33,6 +33,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .black{
@@ -103,4 +104,12 @@ body{
     width: 100%;
     height: 100%;
     background-color: red;
+    
+    position: absolute;
+    backdrop-filter: blur(5px);
+    opacity: 50%;
+}
+
+.flag:hover{
+    cursor: pointer;
 }
