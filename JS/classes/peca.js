@@ -93,8 +93,11 @@ export class Peca extends EncontrarIndice2D{
     }
 
 
-    flag(posY, posX){
+  flag(posY, posX){
 
+   if(this.world[posY][posX].children[0].className != this.peca.className){
+
+    
         if(this.activeMarc) {
 
             this.eatPieceMarcDestroy();
@@ -103,11 +106,14 @@ export class Peca extends EncontrarIndice2D{
 
 
         if(this.world[posY][posX].children.length == 1){
+
             this.eatPieceMarcCreate(this.world[posY][posX]);
+
 
         }
 
     }
+  }
 
  }
 
