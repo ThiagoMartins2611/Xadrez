@@ -64,6 +64,14 @@ export class Peao extends Peca{
 
                 }
 
+                if(this.world[position[0]+1][position[1]+1].children.length == 1){
+                    this.flag(position[0]+1, position[1]+1)
+                }
+
+                if(this.world[position[0]+1][position[1]-1].children.length == 1){
+                    this.flag(position[0]+1, position[1]-1)
+                }
+
             }else{
 
                 if(positionIni[0] != position[0]){
@@ -81,6 +89,15 @@ export class Peao extends Peca{
 
                     this.marcs(position[0]-1, position[1])
 
+                }
+
+
+                if(this.world[position[0]-1][position[1]+1].children.length == 1){
+                    this.flag(position[0]-1, position[1]+1)
+                }
+
+                if(this.world[position[0]-1][position[1]-1].children.length == 1){
+                    this.flag(position[0]-1, position[1]-1)
                 }
 
             }
