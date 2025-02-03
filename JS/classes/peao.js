@@ -1,6 +1,8 @@
 import { Peca } from "./peca.js";
-
-
+import { IniciarTorre } from "../inicializadores/iniciarTorre.js";
+import { IniciarCavalo } from "../inicializadores/iniciarCavalo.js"
+import { IniciarRainha } from "../inicializadores/iniciarRainha.js";
+import { IniciarBispo } from "../inicializadores/iniciarBispo.js";
 
 export class Peao extends Peca{
     constructor(dominio){
@@ -145,7 +147,11 @@ export class Peao extends Peca{
             imgCavalo.className = "imgChoice";
             imgCavalo.innerText = "Cavalo"; //tirar
 
+            imgCavalo.onclick = () => {
+                this.destruction();
 
+
+            }
 
             let imgRainha = document.createElement('div');
             imgRainha.id = "rainhaChoice";
