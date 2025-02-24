@@ -10,8 +10,7 @@ export class Peca extends EncontrarIndice2D{
         this.squarePosition;
         this.peca;
         this.activeMarc = false;
-        
-        
+        this.team;
     }
 
 
@@ -21,7 +20,9 @@ export class Peca extends EncontrarIndice2D{
 
         let peca = document.createElement('div');
         peca.className = `peca ${team}`
+        this.team = team;
         this.peca = peca;
+        
 
         let img = document.createElement('img');
         img.alt = ""
@@ -58,6 +59,15 @@ export class Peca extends EncontrarIndice2D{
             this.activeMarc = !this.activeMarc;
             window.marcsActivate = !window.marcsActivate;
             
+            if(this.peca.className === "peca white"){
+                
+                window.changeTeam = false;
+            
+            }else if(this.peca.className === "peca black"){
+                
+                window.changeTeam = true;
+
+            }
             
         }
     }
@@ -101,14 +111,14 @@ export class Peca extends EncontrarIndice2D{
         if(this.activeMarc) {
 
             this.eatPieceMarcDestroy();
+            
 
     } else {
 
 
-        if(this.world[posY][posX].children.length == 1){
+        if(this.world[posY][posX].children.length == 1 ){
 
             this.eatPieceMarcCreate(this.world[posY][posX]);
-
 
         }
 
@@ -133,7 +143,15 @@ export class Peca extends EncontrarIndice2D{
             this.eliminateMarcs()
             this.eatPieceMarcDestroy()
 
+
+            if(EnemyPiecePosition.children[0].id == "rei"){
+                window.kingLive = false;
+                window.kingTeamDead = EnemyPiecePosition.children[0].className;
+            }
+
             EnemyPiecePosition.children[0].remove()
+
+
 
             this.squarePosition.appendChild(this.peca);
             
@@ -141,6 +159,18 @@ export class Peca extends EncontrarIndice2D{
 
             this.activeMarc = !this.activeMarc;
             window.marcsActivate = !window.marcsActivate;
+            
+            if(this.peca.className === "peca white"){
+                
+                window.changeTeam = false;
+            
+            }else if(this.peca.className === "peca black"){
+                
+                window.changeTeam = true;
+
+            }
+            
+        
         }
 
     }

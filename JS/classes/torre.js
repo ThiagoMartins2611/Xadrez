@@ -51,7 +51,6 @@ export class Torre extends Peca{
            
             this.activeMarc = !this.activeMarc;
             window.marcsActivate = !window.marcsActivate;
-            console.log(window.marcsActivate)
         }
     }
 

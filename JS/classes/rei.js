@@ -4,11 +4,16 @@ export class Rei extends Peca{
     constructor(dominio){
         super()
         this.world = dominio;
-
+        this.name = "rei";
+        
     }
 
     move(){
+
+        this.peca.id = this.name;
+
         this.peca.onclick = () => {
+
 
             if(window.marcsActivate == false || this.activeMarc == true){
 

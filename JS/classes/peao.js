@@ -25,27 +25,19 @@ export class Peao extends Peca{
             upORdown = true;
         }
 
-        
 
         let firstPlay = true;
 
         
          this.rep = setInterval(this.confirmPositionForChangeThePiece.bind(this), 1)
     
-
-        
-
-        
+  
         this.peca.onclick = () =>{
 
             if(window.marcsActivate == false || this.activeMarc == true){
 
             
             let position = this.encontrarIndice(this.world, this.squarePosition);
-    
-
-            
-
             
 
             if(upORdown){
@@ -66,13 +58,23 @@ export class Peao extends Peca{
 
                 }
 
-                if(this.world[position[0]+1][position[1]+1].children.length == 1){
-                    this.flag(position[0]+1, position[1]+1)
+                if(this.world[position[0]+1][position[1]+1] != undefined){
+
+                    if(this.world[position[0]+1][position[1]+1].children.length >= 1){
+                        this.flag(position[0]+1, position[1]+1)
+                    }
+
+                }
+                
+                if(this.world[position[0]+1][position[1]-1] != undefined){
+
+                    if(this.world[position[0]+1][position[1]-1].children.length >= 1){
+                        this.flag(position[0]+1, position[1]-1)
+                    }
+
                 }
 
-                if(this.world[position[0]+1][position[1]-1].children.length == 1){
-                    this.flag(position[0]+1, position[1]-1)
-                }
+                
 
             }else{
 
@@ -94,28 +96,31 @@ export class Peao extends Peca{
                 }
 
 
-                if(this.world[position[0]-1][position[1]+1].children.length == 1){
-                    this.flag(position[0]-1, position[1]+1)
+                if(this.world[position[0]-1][position[1]+1] != undefined){
+                    if(this.world[position[0]-1][position[1]+1].children.length >= 1){
+                        this.flag(position[0]-1, position[1]+1)
+                    }
                 }
+                
+                if(this.world[position[0]-1][position[1]-1] != undefined){
+                    if(this.world[position[0]-1][position[1]-1].children.length >= 1){
+                        this.flag(position[0]-1, position[1]-1)
+                    }
+                }
+                
 
-                if(this.world[position[0]-1][position[1]-1].children.length == 1){
-                    this.flag(position[0]-1, position[1]-1)
-                }
+
 
             }
             
-
             
-
             
-
-
             this.activeMarc = !this.activeMarc;
             window.marcsActivate = !window.marcsActivate;
 
-            console.log(this.activeMarc)
-            console.log(position);
-        }
+        
+            }
+        
         }
 
 
@@ -130,8 +135,18 @@ export class Peao extends Peca{
 
 
         if(actualPosition[0] == 0 || actualPosition[0] == 7){
-        
+
             clearInterval(this.rep);
+
+            if(this.peca.className === "peca white"){
+                
+                window.changeTeam = false;
+            
+            }else if(this.peca.className === "peca black"){
+                
+                window.changeTeam = true;
+
+            }
 
             let body = document.getElementById('body');
             
@@ -148,9 +163,11 @@ export class Peao extends Peca{
             imgCavalo.innerText = "Cavalo"; //tirar
 
             imgCavalo.onclick = () => {
+                let newcavalo = new IniciarCavalo()
+                newcavalo.init(actualPosition[1], actualPosition[0], this.world, this.team)
+
                 this.destruction();
-
-
+                body.removeChild(blur);
             }
 
             let imgRainha = document.createElement('div');
@@ -158,16 +175,40 @@ export class Peao extends Peca{
             imgRainha.className = "imgChoice";
             imgRainha.innerText = "Rainha"; //tirar
 
+            imgRainha.onclick = () => {
+                let newRainha = new IniciarRainha()
+                newRainha.init(actualPosition[1], actualPosition[0], this.world, this.team)
+
+                this.destruction();
+                body.removeChild(blur);
+            }
 
             let imgBispo = document.createElement('div');
             imgBispo.id = "bispoChoice";
             imgBispo.className = "imgChoice";
             imgBispo.innerText = "Bispo"; //tirar
             
+            imgBispo.onclick = () => {
+                let newBispo = new IniciarBispo()
+                newBispo.init(actualPosition[1], actualPosition[0], this.world, this.team)
+
+                this.destruction();
+                body.removeChild(blur);
+            }
+
+
             let imgTorre = document.createElement('div');
             imgTorre.id = "torreChoice";
             imgTorre.className = "imgChoice"; 
             imgTorre.innerText = "Torre"; //tirar
+
+            imgTorre.onclick = () => {
+                let newTorre = new IniciarTorre()
+                newTorre.init(actualPosition[1], actualPosition[0], this.world, this.team)
+
+                this.destruction();
+                body.removeChild(blur);
+            }
 
 
             bloco.appendChild(imgBispo);

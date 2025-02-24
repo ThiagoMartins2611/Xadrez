@@ -24,8 +24,10 @@ body{
     height: 40vw;
     display: grid;
     grid-template-columns: repeat(8, 5vw);
-    
 }
+
+
+
 
 .square{
     width: 5vw;

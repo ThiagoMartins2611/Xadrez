@@ -44,11 +44,6 @@ export class Bispo extends Peca{
             this.activeMarc = !this.activeMarc;
             window.marcsActivate = !window.marcsActivate;
 
-        
-            
-            console.log(this.activeMarc)
-            console.log(position);
-
         }
     }
 }
