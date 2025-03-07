@@ -48,6 +48,8 @@ export class Peao extends Peca{
 
                 if(firstPlay){ 
 
+                    
+
                     this.marcs(position[0]+1, position[1])
                     this.marcs(position[0]+2, position[1])  
                     
@@ -84,10 +86,9 @@ export class Peao extends Peca{
 
                 if(firstPlay){
 
+                   
                     this.marcs(position[0]-1, position[1])
                     this.marcs(position[0]-2, position[1])
-
-                   
 
                 }else{
 
@@ -157,10 +158,11 @@ export class Peao extends Peca{
             bloco.id = "blocoPeao";
 
 
-            let imgCavalo = document.createElement('div');
+            let imgCavalo = document.createElement('img');
             imgCavalo.id = "cavaloChoice";
             imgCavalo.className = "imgChoice";
-            imgCavalo.innerText = "Cavalo"; //tirar
+            imgCavalo.alt = "";
+            imgCavalo.src = "./pecasSVG/cavalo.svg"
 
             imgCavalo.onclick = () => {
                 let newcavalo = new IniciarCavalo()
@@ -170,10 +172,11 @@ export class Peao extends Peca{
                 body.removeChild(blur);
             }
 
-            let imgRainha = document.createElement('div');
+            let imgRainha = document.createElement('img');
             imgRainha.id = "rainhaChoice";
             imgRainha.className = "imgChoice";
-            imgRainha.innerText = "Rainha"; //tirar
+            imgRainha.alt = "";
+            imgRainha.src = "./pecasSVG/rainha.svg"
 
             imgRainha.onclick = () => {
                 let newRainha = new IniciarRainha()
@@ -183,10 +186,11 @@ export class Peao extends Peca{
                 body.removeChild(blur);
             }
 
-            let imgBispo = document.createElement('div');
+            let imgBispo = document.createElement('img');
             imgBispo.id = "bispoChoice";
             imgBispo.className = "imgChoice";
-            imgBispo.innerText = "Bispo"; //tirar
+            imgBispo.alt = "";
+            imgBispo.src = "./pecasSVG/bispo.svg"
             
             imgBispo.onclick = () => {
                 let newBispo = new IniciarBispo()
@@ -197,10 +201,11 @@ export class Peao extends Peca{
             }
 
 
-            let imgTorre = document.createElement('div');
+            let imgTorre = document.createElement('img');
             imgTorre.id = "torreChoice";
             imgTorre.className = "imgChoice"; 
-            imgTorre.innerText = "Torre"; //tirar
+            imgTorre.alt = "";
+            imgTorre.src = "./pecasSVG/torre.svg"
 
             imgTorre.onclick = () => {
                 let newTorre = new IniciarTorre()

@@ -129,15 +129,16 @@ const verificador = setInterval(() => {
 
 
         if(window.kingTeamDead == "peca black"){
-            console.log("Time branco venceu!")
+            console.log("Time branco venceu!");
             
+            window.location.href = "VitoriaBrancas.html";
 
         }
 
         if(window.kingTeamDead == "peca white"){
-            console.log("Time preto venceu!")
+            console.log("Time preto venceu!");
 
-
+            window.location.href = "VitoriaPretas.html";
 
         }
 

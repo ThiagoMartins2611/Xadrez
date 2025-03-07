@@ -7,7 +7,7 @@ export class IniciarRainha{
 
     init(x, y, SquareTabelado, team){
         const rainha = new Rainha(SquareTabelado);
-        rainha.spawn(SquareTabelado[y][x], "", team);
+        rainha.spawn(SquareTabelado[y][x], './pecasSVG/rainha.svg', team);
         rainha.move();
     }
 }

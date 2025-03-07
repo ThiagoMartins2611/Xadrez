@@ -7,7 +7,7 @@ export class IniciarCavalo{
 
     init(x, y, SquareTabelado, team){
         const cavalo = new Cavalo(SquareTabelado);
-        cavalo.spawn(SquareTabelado[y][x], "", team);
+        cavalo.spawn(SquareTabelado[y][x], './pecasSVG/cavalo.svg', team);
         cavalo.move();
     }
 }

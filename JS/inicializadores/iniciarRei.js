@@ -7,7 +7,7 @@ export class IniciarRei{
 
     init(x, y, SquareTabelado, team){
         const rei = new Rei(SquareTabelado);
-        rei.spawn(SquareTabelado[y][x], "", team);
+        rei.spawn(SquareTabelado[y][x], './pecasSVG/rei.svg', team);
         rei.move();
     }
 }

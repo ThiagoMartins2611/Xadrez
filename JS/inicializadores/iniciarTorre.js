@@ -7,7 +7,7 @@ export class IniciarTorre{
 
     init(x, y, SquareTabelado, team){
         const torre = new Torre(SquareTabelado);
-        torre.spawn(SquareTabelado[y][x], "", team);
+        torre.spawn(SquareTabelado[y][x], './pecasSVG/torre.svg', team);
         torre.move();
     }
 }

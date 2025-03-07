@@ -18,10 +18,10 @@
     width: 20vw;
     height: 10vw;
 
-    background-color: blue;
-
+    background: linear-gradient(black, white);
     
 
+    border-radius: 10px;
     
 
     display: flex;
@@ -32,10 +32,25 @@
 .imgChoice{
     width: 3vw;
     height: 3vw;
-    background-color: red;
+
+
+    filter: invert(1) brightness(0.3) contrast(1.7);
 
     box-sizing: border-box;
     border: 1px solid black;
+
+    transition: 0.3s;
+}
+
+.imgChoice path{
+    fill: gray;
+}
+
+.imgChoice:hover{
+    cursor: pointer;
+
+    transform: scale(1.1);
+    
 }
 
 

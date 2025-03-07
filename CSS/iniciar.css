@@ -1,0 +1,357 @@
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+
+  
+    text-decoration: none;
+    
+}
+
+html, body{
+    width: 100vw;
+    height: 100vh;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    background-color: rgb(152, 152, 152);
+}
+
+body{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+
+
+.blackSide {
+    width: 250px;
+    height: 7px;
+    background-color: black;
+    
+    position: absolute;
+    top: 50%;
+    left: 120%;
+
+    display: flex;
+    justify-content: right;
+
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+
+    transform: translate(-50%, -50%) rotate(360deg);
+    animation: spinBlack 1s forwards ease-in-out 1s;
+}
+
+@keyframes spinBlack {
+    0% {
+        transform: translate(-50%, -50%) rotate(900deg);
+        left: 120%;
+    }
+
+
+    100% {
+        transform: translate(-50%, -50%) rotate(45deg);
+        left: 50%;
+    }
+}
+
+
+
+.whiteSide{
+    width: 250px;
+    height: 7px;
+
+    background-color: white;
+    transform: translate(-50%, -50%) rotate(135deg);
+    position: absolute;
+    
+    top: 50%;
+    left: -20%;
+
+    display: flex;
+    justify-content: right;
+
+    
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+
+    
+
+    animation: spinWhite 1s forwards ease-in-out 1s;
+}
+
+@keyframes spinWhite {
+    0% {
+        transform: translate(-50%, -50%) rotate(-765deg);
+        left: -20%;
+    }
+
+
+    100% {
+        transform: translate(-50%, -50%) rotate(135deg);
+        left: 50%;
+    }
+}
+
+.whiteBlade{
+    width: 200px;
+
+    box-shadow: 0 0 10px white;
+    animation: shrineWhite 3s infinite;
+}
+
+@keyframes shrineWhite {
+    0%{
+        box-shadow: 0 0 5px white;
+    }
+
+    50%{
+        box-shadow: 0 0 15px white;
+    }
+
+    100%{
+        box-shadow: 0 0 5px white;
+    }
+}
+
+
+
+.blackBlade{
+    width: 200px;
+
+    box-shadow: 0 0 10px black;
+    animation: shrineBlack 3s infinite;
+}
+
+@keyframes shrineBlack {
+    0%{
+        box-shadow: 0 0 5px black;
+    }
+
+    50%{
+        box-shadow: 0 0 15px black;
+    }
+
+    100%{
+        box-shadow: 0 0 5px black;
+    }
+}
+
+
+
+.cable{
+    width: 50px;
+    height: 7px;
+
+    background-color: gray;
+}
+
+
+.play{
+    width: 100px;
+    height: 80px;
+
+    background: 
+        radial-gradient(at bottom right, black, transparent 100%),
+        radial-gradient(at bottom left, white, transparent 90%);
+ 
+    background-color: rgb(106, 106, 106);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1;
+
+    
+    transition: 0.4s;
+
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 0 50% 0 50%;
+
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+
+
+    animation: apear 0.2s 1.8s forwards;
+}
+
+.play:hover{
+    background-color: rgb(134, 134, 134);
+
+    transform: translate(-50%, -50%);
+
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); 
+}
+
+
+@keyframes apear {
+
+    100%{
+        transform: translate(-50%, -50%) scale(1);
+        
+    }
+}
+
+
+.play h2{
+
+    color: black;
+
+}
+
+#effectImpact1{
+    width: 100px;
+    height: 100px;
+
+    border-radius: 100%;
+    border: solid 10px black;
+
+    position: absolute;
+
+    transform: translate(-50%, -50%) scale(0);
+    top: 50%;
+    left: 50%;
+
+    z-index: 2;
+
+    transform: scale(0);
+
+    animation: explosion 2s 1.8s;
+}
+
+#effectImpact2{
+    width: 100px;
+    height: 100px;
+
+    border-radius: 100%;
+    border: solid 10px white;
+
+    position: absolute;
+    
+
+    z-index: 2;
+
+    transform: translate(-50%, -50%) scale(0);
+    top: 50%;
+    left: 50%;
+
+    animation: explosion 1.5s 1.8s;
+}
+
+
+@keyframes explosion {
+    0%{
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    100%{
+        transform: translate(-50%, -50%) scale(25);
+    }
+}
+
+
+
+
+
+body{
+    overflow: hidden;
+
+    animation: change 1s 1.8s forwards;
+  }
+
+  @keyframes change {
+    100%{
+        background-color: rgb(91, 91, 91);
+    }
+  }
+
+
+  
+  
+  .particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    animation-timing-function: linear;
+  }
+
+  /* Partículas Brancas (vindo da esquerda) */
+  .white-particle {
+    background-color: white;
+    left: -10px; /* Começa fora da tela à esquerda */
+    animation: moveRight 3s linear infinite, fade 3s ease-out infinite;
+  }
+
+  @keyframes moveRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100vw);
+      opacity: 0;
+    }
+  }
+
+  /* Partículas Pretas (vindo da direita) */
+  .black-particle {
+    background-color: black;
+    right: -10px; /* Começa fora da tela à direita */
+    animation: moveLeft 3s linear infinite, fade 3s ease-out infinite;
+  }
+
+  @keyframes moveLeft {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-100vw);
+      opacity: 0;
+    }
+  }
+
+  /* Efeito de desaparecimento */
+  @keyframes fade {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+
+ /* Flash do trovão */
+ .flash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s ease-out;
+  }
+
+  /* Raio */
+  .lightning {
+    position: fixed;
+    width: 2px;
+    background-color: white;
+    opacity: 0;
+    animation: fadeOut 0.5s linear forwards;
+  }
+
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }

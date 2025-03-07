@@ -7,7 +7,7 @@ export class IniciarBispo{
 
     init(x, y, SquareTabelado, team){
         const bispo = new Bispo(SquareTabelado);
-        bispo.spawn(SquareTabelado[y][x], "", team);
+        bispo.spawn(SquareTabelado[y][x], './pecasSVG/bispo.svg', team);
         bispo.move();
     }
 }
