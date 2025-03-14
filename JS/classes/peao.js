@@ -49,9 +49,12 @@ export class Peao extends Peca{
                 if(firstPlay){ 
 
                     
-
+                    if(this.world[position[0]+1][position[1]].children.length == 0){
+                        this.marcs(position[0]+2, position[1]) 
+                    }
                     this.marcs(position[0]+1, position[1])
-                    this.marcs(position[0]+2, position[1])  
+                    
+                     
                     
 
                 }else{
@@ -86,9 +89,11 @@ export class Peao extends Peca{
 
                 if(firstPlay){
 
-                   
+                    if(this.world[position[0]-1][position[1]].children.length == 0){
+                        this.marcs(position[0]-2, position[1])
+                    }
                     this.marcs(position[0]-1, position[1])
-                    this.marcs(position[0]-2, position[1])
+                    
 
                 }else{
 

@@ -1,0 +1,162 @@
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+
+  
+    text-decoration: none;
+    
+}
+
+
+html, body{
+    width: 100vw;
+    height: 100vh;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    background-color: rgb(91, 91, 91);
+}
+
+body{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+
+
+.blackSide {
+    width: 250px;
+    height: 7px;
+    background-color: black;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    justify-content: right;
+
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+
+    transform: translate(-50%, -50%) rotate(45deg);
+ 
+    animation: tremilique 2s;
+}
+
+
+
+.whiteSide{
+    width: 250px;
+    height: 7px;
+
+    background-color: white;
+    transform: translate(-50%, -50%) rotate(135deg);
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    justify-content: right;
+
+    
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+
+    
+    animation: tremilique 2s;
+}
+
+@keyframes tremilique {
+    
+    0%{
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50% -50%);
+    }
+
+    30%{
+        
+        top: 50%;
+        left: 49%;
+    }
+
+    60%{
+        top: 51%;
+        left: 50%;
+    }
+
+    90%{
+        top: 51%;
+        left: 49%;
+    }
+
+    100%{
+        top: 50%;
+        left: 50%;
+    }
+
+}
+
+
+.whiteBlade{
+    width: 200px;
+    
+
+    box-shadow: 0 0 10px white;
+    animation: shrineWhite 3s infinite;
+}
+
+@keyframes shrineWhite {
+    0%{
+        box-shadow: 0 0 5px white;
+    }
+
+    50%{
+        box-shadow: 0 0 15px white;
+    }
+
+    100%{
+        box-shadow: 0 0 5px white;
+    }
+}
+
+
+
+.blackBlade{
+    width: 200px;
+
+    box-shadow: 0 0 10px black;
+    animation: shrineBlack 3s infinite;
+}
+
+@keyframes shrineBlack {
+    0%{
+        box-shadow: 0 0 5px black;
+    }
+
+    50%{
+        box-shadow: 0 0 15px black;
+    }
+
+    100%{
+        box-shadow: 0 0 5px black;
+    }
+}
+
+
+
+.cable{
+    width: 50px;
+    height: 7px;
+
+    background-color: gray;
+}
