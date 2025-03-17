@@ -47,9 +47,8 @@ body{
 
     transform: translate(-50%, -50%) rotate(45deg);
  
-    animation: tremilique 2s;
+    animation: tremilique 3.5s;
 }
-
 
 
 .whiteSide{
@@ -71,7 +70,32 @@ body{
     border-top-left-radius: 5px;
 
     
-    animation: tremilique 2s;
+    animation: tremilique 3s, 
+               retracting 0.3s 3s forwards, 
+               cut 0.3s 3.5s forwards;  
+}
+
+@keyframes retracting {
+    0%{
+    }
+
+    100%{
+        transform: translate(-50%, -50%) rotate(70deg);
+        left: 40%;
+        top: 40%;
+    }
+}
+
+@keyframes cut {
+    0%{
+
+    }
+
+    100%{
+        transform: translate(-50%, -50%) rotate(170deg);
+        left: 60%;
+        top: 60%;
+    }
 }
 
 @keyframes tremilique {
@@ -83,21 +107,27 @@ body{
         transform: translate(-50% -50%);
     }
 
-    30%{
+    10%{
         
         top: 50%;
         left: 49%;
     }
 
-    60%{
+    40%{
         top: 51%;
         left: 50%;
     }
 
-    90%{
+    60%{
         top: 51%;
         left: 49%;
     }
+
+    70%{
+        top: 51%;
+        left: 50%;
+    }
+
 
     100%{
         top: 50%;
@@ -105,6 +135,8 @@ body{
     }
 
 }
+
+
 
 
 .whiteBlade{
@@ -151,6 +183,7 @@ body{
         box-shadow: 0 0 5px black;
     }
 }
+
 
 
 
