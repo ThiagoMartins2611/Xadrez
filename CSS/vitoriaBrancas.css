@@ -188,7 +188,14 @@ body{
 
 
 .cable{
-    width: 50px;
+    width: 25px;
+    height: 7px;
+
+    background-color: gray;
+}
+
+.cable2{
+    width: 25px;
     height: 7px;
 
     background-color: gray;
