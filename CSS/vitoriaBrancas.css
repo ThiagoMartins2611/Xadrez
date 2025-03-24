@@ -33,7 +33,7 @@ body{
 .blackSide {
     width: 250px;
     height: 7px;
-    background-color: black;
+    
     
     position: absolute;
     top: 50%;
@@ -47,7 +47,41 @@ body{
 
     transform: translate(-50%, -50%) rotate(45deg);
  
-    animation: tremilique 3.5s;
+    animation: tremilique 3.5s,
+               off 3s 3.6s forwards;
+}
+
+.blackSide .cable{
+    animation: crash 3s 3.6s forwards;
+}
+
+@keyframes crash {
+    0%{
+
+    }
+    100%{
+        transform: translateX(-30px)
+                   translateY(1000px)
+                   rotate(1800deg);
+        
+    }
+
+}
+
+.blackSide .cable2{
+    animation: crash2 3s 3.6s forwards;
+}
+
+@keyframes crash2 {
+    0%{
+
+    }
+    100%{
+        transform: translateX(300px)
+                   translateY(1000px)
+                   rotate(1800deg);
+    }
+
 }
 
 
@@ -92,9 +126,9 @@ body{
     }
 
     100%{
-        transform: translate(-50%, -50%) rotate(170deg);
+        transform: translate(-50%, -50%) rotate(200deg);
         left: 60%;
-        top: 60%;
+        top: 70%;
     }
 }
 
@@ -165,9 +199,14 @@ body{
 
 .blackBlade{
     width: 200px;
+    background-color: black;
+
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 
     box-shadow: 0 0 10px black;
-    animation: shrineBlack 3s infinite;
+    animation: shrineBlack 3s infinite,
+               off 3s 3.6s forwards;
 }
 
 @keyframes shrineBlack {
@@ -184,6 +223,21 @@ body{
     }
 }
 
+@keyframes off {
+    0%{
+
+    }
+
+    20%{
+        width: 0px;
+    }
+
+    100%{
+        width: 0;
+        display: none;
+    }
+}
+
 
 
 
@@ -191,12 +245,14 @@ body{
     width: 25px;
     height: 7px;
 
+
     background-color: gray;
 }
 
 .cable2{
     width: 25px;
     height: 7px;
+
 
     background-color: gray;
 }
