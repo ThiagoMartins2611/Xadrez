@@ -106,7 +106,8 @@ body{
     
     animation: tremilique 3s, 
                retracting 0.3s 3s forwards, 
-               cut 0.3s 3.5s forwards;  
+               cut 0.3s 3.5s forwards,
+               victoryPosition  1s 4s forwards;
 }
 
 @keyframes retracting {
@@ -131,6 +132,20 @@ body{
         top: 70%;
     }
 }
+
+@keyframes victoryPosition {
+    0%{
+
+    }
+
+    100%{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+                   rotate(90deg);
+    }
+}
+
 
 @keyframes tremilique {
     
