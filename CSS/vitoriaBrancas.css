@@ -110,6 +110,21 @@ body{
                victoryPosition  1s 4s forwards;
 }
 
+.whiteSide::after{
+    content: "";
+   
+
+    background-image: url('/pecasSVG/rei.svg');
+    background-size: cover; /* Ajusta a imagem para cobrir o elemento */
+    background-position: center; /* Centraliza a imagem */
+    filter: invert(1); 
+    
+    transform: rotate(220deg);
+    height: 90px;
+    width: 90px;
+    
+}
+
 @keyframes retracting {
     0%{
     }
@@ -139,12 +154,13 @@ body{
     }
 
     100%{
-        top: 50%;
+        top: 30%;
         left: 50%;
         transform: translate(-50%, -50%)
                    rotate(90deg);
     }
 }
+
 
 
 @keyframes tremilique {
