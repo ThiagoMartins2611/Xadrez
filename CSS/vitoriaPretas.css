@@ -48,10 +48,12 @@ body{
     transform: translate(-50%, -50%) rotate(45deg);
  
     animation: tremilique 3.5s,
-               off 3s 3.6s forwards;
+               retracting 0.3s 3s forwards, 
+               cut 0.3s 3.5s forwards,
+               victoryPosition  1s 4s forwards;
 }
 
-.blackSide .cable{
+.whiteSide .cable{
     animation: crash 3s 3.6s forwards;
 }
 
@@ -68,7 +70,7 @@ body{
 
 }
 
-.blackSide .cable2{
+.whiteSide .cable2{
     animation: crash2 3s 3.6s forwards;
 }
 
@@ -103,10 +105,8 @@ body{
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
 
-    animation: tremilique 3s, 
-               retracting 0.3s 3s forwards, 
-               cut 0.3s 3.5s forwards,
-               victoryPosition  1s 4s forwards;
+    animation: tremilique 3s,
+               off 3s 3.6s forwards;
 }
 
 
@@ -193,7 +193,8 @@ body{
     
 
     box-shadow: 0 0 10px white;
-    animation: shrineWhite 3s infinite;
+    animation: shrineWhite 3s infinite,
+               off 3s 3.6s forwards;
 }
 
 @keyframes shrineWhite {
@@ -220,8 +221,8 @@ body{
     border-top-left-radius: 5px;
 
     box-shadow: 0 0 10px black;
-    animation: shrineBlack 3s infinite,
-               off 3s 3.6s forwards;
+    animation: shrineBlack 3s infinite;
+               
 }
 
 @keyframes shrineBlack {
@@ -274,7 +275,7 @@ body{
 
 .vi{
     position: absolute;
-    color: white;
+    color: black;
     left: 50%;
     top: 50%;
     font-size: 4vh;
@@ -327,7 +328,6 @@ body{
 
 .winners{
     width: 5vw;
-    filter: invert(1);
 }
 
 .winners.one{
