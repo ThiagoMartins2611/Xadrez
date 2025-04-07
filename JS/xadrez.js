@@ -4,7 +4,7 @@ import { IniciarBispo } from "./inicializadores/iniciarBispo.js";
 import { IniciarPeao } from "./inicializadores/iniciarPeao.js";
 import {IniciarRei} from "./inicializadores/iniciarRei.js";
 import {IniciarCavalo} from "./inicializadores/iniciarCavalo.js"
-import { Peca } from "./classes/peca.js";
+
 
 const torres = new IniciarTorre()
 const bispos = new IniciarBispo()

@@ -20,8 +20,11 @@ export class Peca extends EncontrarIndice2D{
 
         let peca = document.createElement('div');
         peca.className = `peca ${team}`
+        peca.dataset.nome = "pecaObj";
+        peca._objRef = this;
         this.team = team;
         this.peca = peca;
+        
         
 
         let img = document.createElement('img');

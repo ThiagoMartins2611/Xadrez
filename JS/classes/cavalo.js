@@ -9,6 +9,22 @@ export class Cavalo extends Peca{
     move(){
         this.peca.onclick = () =>{
 
+            if(window.marcsActivate == true && this.activeMarc == false){
+                
+                
+                Array.from(document.getElementsByClassName("marc")).forEach((marc)=>{
+                    marc.remove()
+                })
+                
+                Array.from(document.getElementsByClassName("peca")).forEach((peca)=>{
+                    
+                    const obj = peca._objRef;
+                    obj.activeMarc = !obj.activeMarc;
+                })
+
+            }
+           
+
             if(window.marcsActivate == false || this.activeMarc == true){
             //position[y, x]
             let position = this.encontrarIndice(this.world, this.squarePosition);
@@ -40,6 +56,8 @@ export class Cavalo extends Peca{
            
             this.activeMarc = !this.activeMarc;
             window.marcsActivate = !window.marcsActivate;
+
+            console.log(window.marcsActivate);
             
         }
     }
