@@ -11,6 +11,22 @@ export class Rainha extends Peca{
     move(){
         this.peca.onclick = () =>{
 
+            if(window.marcsActivate == true && this.activeMarc == false){
+                
+                
+                Array.from(document.getElementsByClassName("marc")).forEach((marc)=>{
+                    marc.remove()
+                })
+                
+                Array.from(document.getElementsByClassName("peca")).forEach((peca)=>{
+                    
+                    const obj = peca._objRef;
+                    obj.activeMarc = false;
+                })
+
+                window.marcsActivate = false
+            }
+
             if(window.marcsActivate == false || this.activeMarc == true){
             //position[y, x]
             let position = this.encontrarIndice(this.world, this.squarePosition);

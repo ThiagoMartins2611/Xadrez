@@ -19,9 +19,10 @@ export class Cavalo extends Peca{
                 Array.from(document.getElementsByClassName("peca")).forEach((peca)=>{
                     
                     const obj = peca._objRef;
-                    obj.activeMarc = !obj.activeMarc;
+                    obj.activeMarc = false;
                 })
 
+                window.marcsActivate = false
             }
            
 
