@@ -184,5 +184,26 @@ export class Peca extends EncontrarIndice2D{
         flags.forEach(marc => marc.remove());
     }
 
+    verificClick(){
+        if(window.marcsActivate == true && this.activeMarc == false){
+                
+                
+            Array.from(document.getElementsByClassName("marc")).forEach((marc)=>{
+                marc.remove()
+            })
+
+            Array.from(document.getElementsByClassName("flag")).forEach((flag)=>{
+                flag.remove()
+            })
+            
+            Array.from(document.getElementsByClassName("peca")).forEach((peca)=>{
+                
+                const obj = peca._objRef;
+                obj.activeMarc = false;
+            })
+
+            window.marcsActivate = false
+        }
+    }
 
 }

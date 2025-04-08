@@ -10,21 +10,7 @@ export class Bispo extends Peca{
     move(){
         this.peca.onclick =() => {
 
-            if(window.marcsActivate == true && this.activeMarc == false){
-                
-                
-                Array.from(document.getElementsByClassName("marc")).forEach((marc)=>{
-                    marc.remove()
-                })
-                
-                Array.from(document.getElementsByClassName("peca")).forEach((peca)=>{
-                    
-                    const obj = peca._objRef;
-                    obj.activeMarc = false;
-                })
-
-                window.marcsActivate = false
-            }
+            this.verificClick()
 
             if(window.marcsActivate == false || this.activeMarc == true){
             //position[y, x]
