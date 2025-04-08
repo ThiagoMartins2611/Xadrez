@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     border: 0;
-
+    box-sizing: border-box;
 }
 
 
@@ -12,9 +12,12 @@ html, body{
 }
 
 body{
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    flex-direction: column;
     background-color: rgb(88, 88, 88);
 }
 
@@ -115,4 +118,24 @@ body{
 
 .flag:hover{
     cursor: pointer;
+}
+
+
+.marcador{
+    width: 4vw;
+    height: 2vw;
+
+
+    margin: 20px;
+    
+    border-radius: 10px;
+    
+}
+
+#marcadorwhite{
+    border: 2px dashed white ;
+}
+
+#marcadorblack{
+    border: 2px dashed black ;
 }

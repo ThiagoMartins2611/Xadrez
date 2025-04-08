@@ -93,16 +93,25 @@ const verificador = setInterval(() => {
 
     let whitePecas = document.querySelectorAll(".peca.white");
     let blackPecas = document.querySelectorAll(".peca.black");
-    
+    let marcadorW = document.getElementById("marcadorwhite")
+    let marcadorB = document.getElementById("marcadorblack")
+
     if(window.changeTeam){
 
         whitePecas.forEach(peca => {
             peca.style.pointerEvents = "auto"
         });
 
+
         blackPecas.forEach(peca => {
             peca.style.pointerEvents = "none"
         });
+
+        marcadorB.style.backgroundColor = '';
+        marcadorW.style.backgroundColor = 'white';
+
+        marcadorW.style.boxShadow = '0 0 20px white';
+        marcadorB.style.boxShadow = ''
 
     }else{
 
@@ -113,6 +122,12 @@ const verificador = setInterval(() => {
         whitePecas.forEach(peca => {
             peca.style.pointerEvents = "none"
         });
+
+        marcadorB.style.backgroundColor = 'black';
+        marcadorW.style.backgroundColor = '';
+
+        marcadorB.style.boxShadow = '0 0 20px black'
+        marcadorW.style.boxShadow = ''
     }
 
     if(window.kingLive == false){
