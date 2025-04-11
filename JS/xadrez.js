@@ -87,14 +87,35 @@ let SquareTabelado = transformarEm2D(arraySquare, 8);
 black(SquareTabelado);
 white(SquareTabelado);
 
+function timeReductionWhite(time, box){
+    if(window.changeTeam){
+        time -= 1
+        box.textContent = ""
+        box.textContent = time;
+    }
+};
 
+function timeReductionBlack(time, box){
+    if(!window.changeTeam){
+        time -= 1
+        box.innerText = "";
+        box.innerText = time;
+    }
+};
+
+
+let timeWhite = 180;
+let timeBlack = 180;
 
 const verificador = setInterval(() => {
 
     let whitePecas = document.querySelectorAll(".peca.white");
     let blackPecas = document.querySelectorAll(".peca.black");
-    let marcadorW = document.getElementById("marcadorwhite")
-    let marcadorB = document.getElementById("marcadorblack")
+    let marcadorW = document.getElementById("marcadorwhite");
+    let marcadorB = document.getElementById("marcadorblack");
+    let boxtimewhite = document.getElementById("whitetime");
+    let boxtimeblack = document.getElementById("blacktime");
+
 
     if(window.changeTeam){
 
@@ -113,6 +134,9 @@ const verificador = setInterval(() => {
         marcadorW.style.boxShadow = '0 0 20px white';
         marcadorB.style.boxShadow = ''
 
+        setInterval(timeReductionWhite(timeWhite, boxtimewhite), 1000)
+        
+
     }else{
 
         blackPecas.forEach(peca => {
@@ -128,7 +152,15 @@ const verificador = setInterval(() => {
 
         marcadorB.style.boxShadow = '0 0 20px black'
         marcadorW.style.boxShadow = ''
+
+        setInterval(timeReductionBlack(timeBlack, boxtimeblack), 1000)
     }
+
+
+
+
+
+
 
     if(window.kingLive == false){
         clearInterval(verificador);
