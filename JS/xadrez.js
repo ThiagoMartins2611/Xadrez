@@ -87,25 +87,36 @@ let SquareTabelado = transformarEm2D(arraySquare, 8);
 black(SquareTabelado);
 white(SquareTabelado);
 
-function timeReductionWhite(time, box){
-    if(window.changeTeam){
-        time -= 1
-        box.textContent = ""
-        box.textContent = time;
-    }
-};
-
-function timeReductionBlack(time, box){
-    if(!window.changeTeam){
-        time -= 1
-        box.innerText = "";
-        box.innerText = time;
-    }
-};
-
+let boxtimewhite = document.getElementById("whitetime");
+let boxtimeblack = document.getElementById("blacktime");
 
 let timeWhite = 180;
 let timeBlack = 180;
+let contB = 0;
+let contW = 0;
+
+function timeReductionWhite(){
+    if(window.changeTeam && timeWhite > 0){
+        contW += 1;
+        if(contW%10 == 0){
+            timeWhite -= 1;
+        }
+
+        boxtimewhite.innerText = timeWhite;
+    }
+};
+
+function timeReductionBlack(){
+    if(!window.changeTeam && timeBlack > 0){
+        contB += 1;
+        if(contB%10 == 0){
+            timeBlack -= 1;
+        }
+        boxtimeblack.innerText = timeBlack;
+    }
+};
+
+
 
 const verificador = setInterval(() => {
 
@@ -113,8 +124,7 @@ const verificador = setInterval(() => {
     let blackPecas = document.querySelectorAll(".peca.black");
     let marcadorW = document.getElementById("marcadorwhite");
     let marcadorB = document.getElementById("marcadorblack");
-    let boxtimewhite = document.getElementById("whitetime");
-    let boxtimeblack = document.getElementById("blacktime");
+   
 
 
     if(window.changeTeam){
@@ -134,8 +144,7 @@ const verificador = setInterval(() => {
         marcadorW.style.boxShadow = '0 0 20px white';
         marcadorB.style.boxShadow = ''
 
-        setInterval(timeReductionWhite(timeWhite, boxtimewhite), 1000)
-        
+      
 
     }else{
 
@@ -153,11 +162,17 @@ const verificador = setInterval(() => {
         marcadorB.style.boxShadow = '0 0 20px black'
         marcadorW.style.boxShadow = ''
 
-        setInterval(timeReductionBlack(timeBlack, boxtimeblack), 1000)
+        
     }
 
 
+    
+        timeReductionWhite();
+        timeReductionBlack();
 
+   
+
+    
 
 
 
@@ -177,15 +192,18 @@ const verificador = setInterval(() => {
 
         if(window.kingTeamDead == "peca black"){
             console.log("Time branco venceu!");
-            
-            window.location.href = "VitoriaBrancas.html";
+            setTimeout(()=>{
+                window.location.href = "VitoriaBrancas.html";
+            }, 1000)
 
         }
 
         if(window.kingTeamDead == "peca white"){
             console.log("Time preto venceu!");
 
-            window.location.href = "VitoriaPretas.html";
+            setTimeout(()=>{
+                window.location.href = "VitoriaPretas.html";
+            }, 1000)
 
         }
 
