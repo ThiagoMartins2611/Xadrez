@@ -87,32 +87,90 @@ let SquareTabelado = transformarEm2D(arraySquare, 8);
 black(SquareTabelado);
 white(SquareTabelado);
 
-let boxtimewhite = document.getElementById("whitetime");
-let boxtimeblack = document.getElementById("blacktime");
+let minWhite = document.getElementById("minwhite");
+let secWhite = document.getElementById("secwhite");
 
-let timeWhite = 180;
-let timeBlack = 180;
+let minBlack = document.getElementById("minblack")
+let secBlack = document.getElementById("secblack");
+
+let secW = 59;
+let secB = 59;
+
+let minW = 2;
+let minB = 2;
+
+minWhite.innerText = `${minW}:`
+secWhite.innerText = secW;
+
+minBlack.innerText = `${minB}:`
+secBlack.innerText = secB;
+
+
+
+
 let contB = 0;
 let contW = 0;
 
 function timeReductionWhite(){
-    if(window.changeTeam && timeWhite > 0){
+    if(window.changeTeam && secW > 0){
+        
         contW += 1;
         if(contW%10 == 0){
-            timeWhite -= 1;
+            secW -= 1;
         }
 
-        boxtimewhite.innerText = timeWhite;
+        if(secW < 10){
+            secWhite.innerText = `0${secW}`;
+        }else{
+            secWhite.innerText = secW;
+        }
+        
+        if(minW == 0 && secW == 0){
+            
+            window.kingLive = false;
+            window.kingTeamDead = "peca white";
+
+
+        }else if(secW == 0){
+            minW -= 1;
+            setTimeout(()=>{
+                minWhite.innerText = `${minW}:`
+                secW = 59;
+            },1000)
+            
+            
+        }
     }
 };
 
 function timeReductionBlack(){
-    if(!window.changeTeam && timeBlack > 0){
+    if(!window.changeTeam && secB > 0){
         contB += 1;
         if(contB%10 == 0){
-            timeBlack -= 1;
+            secB -= 1;
         }
-        boxtimeblack.innerText = timeBlack;
+
+        if(secB < 10){
+            secBlack.innerText = `0${secB}`;
+        }else{
+            secBlack.innerText = secB;
+        }
+        
+        if(minB == 0 && secB == 0){
+            
+            window.kingLive = false;
+            window.kingTeamDead = "peca black";
+
+
+        }else if(secB == 0){
+            minB -= 1;
+            setTimeout(()=>{
+                minBlack.innerText = `${minB}:`
+                secB = 59;
+            },1000)
+            
+            
+        }
     }
 };
 

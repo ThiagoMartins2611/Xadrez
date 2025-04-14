@@ -148,5 +148,7 @@ body{
 }
 
 .time{
+    display: flex;
     font-size: 3vh;
 }
+
